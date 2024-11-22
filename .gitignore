@@ -7,3 +7,5 @@
 .config/*
 !.config/sway/
 !.config/sway/*
+!.config/gtk*/
+!.config/gtk*/*
