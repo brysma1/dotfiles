@@ -1,0 +1,25 @@
+## Input configuration
+input "1452:641:Apple_Internal_Keyboard_/_Trackpad" {
+    repeat_delay 250
+    repeat_rate 30
+
+    # Keyboard config
+    xkb_layout us
+    xkb_variant altgr-intl
+    xkb_model pc105
+    xkb_options caps:escape,shift:both_capslock
+
+    # Touchpad config
+    accel_profile flat
+    click_method clickfinger
+    drag enabled
+    dwt disabled
+    middle_emulation enabled
+    natural_scroll disabled
+    scroll_button_lock disabled
+    scroll_factor 1
+    scroll_method two_finger
+    tap enabled
+    tap_button_map lrm
+
+}

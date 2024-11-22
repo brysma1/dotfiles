@@ -1,0 +1,4 @@
+## Output configuration
+# Wallpaper from https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books
+output * bg Aharen_Reina_Holding_C_Programming_Language.png fill
+output eDP-1 res 2560x1600@60Hz pos 0 0 scale 1
