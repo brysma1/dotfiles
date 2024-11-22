@@ -5,6 +5,7 @@
 !.zprofile
 !.config/
 .config/*
+!.config/chromium-flags.conf
 !.config/sway/
 !.config/sway/*
 !.config/gtk*/
