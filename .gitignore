@@ -8,6 +8,8 @@
 !.config/chromium-flags.conf
 !.config/sway/
 !.config/sway/**
+!.config/foot/
+!.config/foot/*
 !.config/gtk*/
 !.config/gtk*/*
 !.config/nvim/
