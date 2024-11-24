@@ -18,7 +18,7 @@ if [ -d $ZSH ]; then
     plugins=(git docker)
 
     source $ZSH/oh-my-zsh.sh
-else; do
+else
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
