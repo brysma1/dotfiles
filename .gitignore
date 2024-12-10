@@ -6,6 +6,7 @@
 !.config/
 .config/*
 !.config/chromium-flags.conf
+!.config/user-dirs.dirs
 !.config/sway/
 !.config/sway/**
 !.config/foot/
