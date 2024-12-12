@@ -3,6 +3,7 @@
 !.gitignore
 !.zshrc
 !.zprofile
+!LICENSE
 !.config/
 .config/*
 !.config/chromium-flags.conf
