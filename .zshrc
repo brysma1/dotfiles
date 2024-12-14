@@ -15,7 +15,7 @@ if [ -d $ZSH ]; then
 
     HIST_STAMPS="mm/dd/yyyy"
 
-    plugins=(git docker)
+    plugins=(git docker golang)
 
     source $ZSH/oh-my-zsh.sh
 else
