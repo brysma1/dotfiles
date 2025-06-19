@@ -1,0 +1,123 @@
+// -*- mode: jsonc -*-
+{
+    "spacing": 0,
+    "layer": "top",
+    "exclusive": false,
+    "reload_style_on_change": true,
+    "start_hidden": true,
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "battery",
+        "cpu",
+        "backlight",
+        "temperature",
+        "pulseaudio",
+        "tray",
+        "memory",
+        "network",
+        "custom/power"
+    ],
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon} {name} {icon}",
+        "format-icons": {
+            "active": "🌸",
+            "default": ""
+        }
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "rewrite": {
+            "^$": "(⁄⁄•⁄ω⁄•⁄⁄)"
+        }
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": " {:%H:%M - %d/%m/%Y} ",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "🧠 {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "💾 {}%"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "🌡️ {temperatureC}°C"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "🌑",
+            "🌒",
+            "🌓",
+            "🌔",
+            "🌕"
+        ]
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "interval": 5,
+        "format": "(ง •̀_•́)ง {capacity}% {icon}",
+        "format-charging": "(〃´∀｀) {capacity}% ⚡",
+        "format-plugged": "( ´ ▽ ` ) {capacity}% 🔌",
+        "format-warning": "(˘ω˘ ) {capacity}% {icon}",
+        "format-icons": [
+            "🪫",
+            "🪫",
+            "🔋",
+            "🔋",
+            "🔋"
+        ],
+    },
+    "network": {
+        "format-wifi": "📶 {essid} ({signalStrength}%)",
+        "format-ethernet": "🌐 {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) 🔗",
+        "format-disconnected": "Disconnected 💔",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "🔊 {volume}% {format_source}",
+        "format-bluetooth": "🎧 {volume}% {format_source}",
+        "format-muted": "🔇 Muted {format_source}",
+        "format-source": "🎙️ {volume}%",
+        "format-source-muted": "🎙️ Muted",
+        "format-icons": {
+            "headphone": "🎧",
+            "hands-free": "🎧",
+            "headset": "🎧",
+            "phone": "📱",
+            "portable": "📱",
+            "car": "🚗",
+            "default": ["🔈", "🔉", "🔊"]
+        },
+        "scroll-step": 1,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+    },
+    "custom/power": {
+        "format": " ⏻ ",
+        "tooltip": false,
+        "on-click": "wlogout",
+        "on-click-right": "systemctl poweroff"
+    }
+}

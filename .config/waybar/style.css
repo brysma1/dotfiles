@@ -1,0 +1,270 @@
+/* -= COLORS =-
+Background Color    Contrast Ratio  Foreground Color    Use Case
+#FF3023             03.56:1         #FBFBFB             Large text, warnings, alerts
+#FF3023             02.56:1         #C5D9F5             Decorative elements, large icons only
+#FBFBFB             16.89:1         #1B191B             Primary content, critical text
+#FBE2D4             14.09:1         #1B191B             Main text, important UI elements
+#FBE2D4             02.97:1         #FF3023             Decorative elements only
+#DFE3EE             13.61:1         #1B191B             Regular text, standard UI elements
+#C5D9F5             12.16:1         #1B191B             Information sections, content areas
+#C4F5C4             14.32:1         #1B191B             Success messages, positive indicators
+#AAAED6             08.10:1         #1B191B             Secondary content, status information
+#627BDF             03.74:1         #FBFBFB             Large buttons, headlines, badges
+#627BDF             04.50:1         #1B191B             Secondary elements, limited text use
+#1B191B             16.89:1         #FBFBFB             Primary text, important information
+*/
+
+* {
+    font-family: "ComicShannsMono Nerd Font Propo";
+    font-size: 12px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #1B191B;
+}
+
+*:not(window) {
+    border-radius: 16px;
+    margin: 0 2px;
+}
+
+button {
+    box-shadow: none;
+    border: none;
+}
+
+button:hover {
+    background: inherit;
+    background-color: rgba(223, 227, 238, 0.3);
+}
+
+/* Make all modules have their own rounded section */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mpd,
+#custom-power {
+    padding: 0 10px;
+    color: #1B191B;
+    border: none;
+}
+
+/* Update workspaces styling to have each workspace in its own container */
+#workspaces {
+    background-color: transparent;
+    padding: 0 3px;
+    margin: 0;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #1B191B;
+    background-color: #C4F5C4;  /* Green background for each workspace */
+}
+
+#workspaces button:hover {
+    background: rgba(196, 245, 196, 0.8);
+}
+
+#workspaces button.focused {
+    background-color: #627BDF;
+    color: #FBFBFB;
+}
+
+#workspaces button.urgent {
+    background-color: #FF3023;
+    color: #FBFBFB; /* Good contrast at 3.56:1 for large text/buttons */
+}
+
+#window {
+    background-color: #FBE2D4;
+    padding: 0 10px;
+}
+
+/* Style for empty window module to show the placeholder */
+window#waybar.empty #window {
+    background-color: #C5D9F5;
+    color: #1B191B;
+}
+
+#clock {
+    background-color: #AAAED6; /* Good contrast at 8.10:1 with #1B191B */
+}
+
+#battery {
+    background-color: #DFE3EE; /* Good contrast at 13.61:1 with #1B191B */
+    color: #1B191B;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #1B191B;
+    background-color: #C5D9F5; /* Good contrast at 12.16:1 with #1B191B */
+}
+
+@keyframes blink {
+    to {
+        background-color: #FF3023;
+        color: #FBFBFB; /* Good contrast at 3.56:1 for alerts */
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #FF3023;
+    color: #FBFBFB; /* Good contrast at 3.56:1 for alerts */
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #1B191B;
+}
+
+#cpu {
+    background-color: #C5D9F5; /* Good contrast at 12.16:1 with #1B191B */
+    color: #1B191B;
+}
+
+#memory {
+    background-color: #AAAED6; /* Good contrast at 8.10:1 with #1B191B */
+    color: #1B191B;
+}
+
+#disk {
+    background-color: #DFE3EE; /* Good contrast at 13.61:1 with #1B191B */
+    color: #1B191B;
+}
+
+#backlight {
+    background-color: #FBE2D4; /* Good contrast at 14.09:1 with #1B191B */
+    color: #1B191B;
+}
+
+#network {
+    background-color: #1B191B; /* Changed from #627BDF to improve contrast */
+    color: #FBFBFB; /* Much better contrast at 16.89:1 */
+}
+
+#network.disconnected {
+    background-color: #FF3023;
+    color: #FBFBFB; /* Good contrast at 3.56:1 for alerts */
+}
+
+#pulseaudio {
+    background-color: #FBE2D4; /* Good contrast at 14.09:1 with #1B191B */
+    color: #1B191B;
+}
+
+#pulseaudio.muted {
+    background-color: #1B191B; /* Changed to improve contrast */
+    color: #FBFBFB; /* Better contrast at 16.89:1 */
+}
+
+#wireplumber {
+    background-color: #FBE2D4; /* Good contrast at 14.09:1 with #1B191B */
+    color: #1B191B;
+}
+
+#wireplumber.muted {
+    background-color: #FF3023;
+    color: #FBFBFB; /* Good contrast at 3.56:1 for alerts */
+}
+
+#custom-media {
+    background-color: #C5D9F5; /* Good contrast at 12.16:1 with #1B191B */
+    color: #1B191B;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #C5D9F5; /* Good contrast at 12.16:1 with #1B191B */
+}
+
+#custom-media.custom-vlc {
+    background-color: #FBE2D4; /* Good contrast at 14.09:1 with #1B191B */
+}
+
+#temperature {
+    background-color: #FBE2D4; /* Good contrast at 14.09:1 with #1B191B */
+    color: #1B191B;
+}
+
+#temperature.critical {
+    background-color: #FF3023;
+    color: #FBFBFB; /* Good contrast at 3.56:1 for alerts */
+}
+
+#tray {
+    background-color: #DFE3EE; /* Good contrast at 13.61:1 with #1B191B */
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #FF3023;
+}
+
+#mpd {
+    background-color: #C5D9F5; /* Good contrast at 12.16:1 with #1B191B */
+    color: #1B191B;
+}
+
+#mpd.disconnected {
+    background-color: #FF3023;
+    color: #FBFBFB; /* Good contrast at 3.56:1 for alerts */
+}
+
+#mpd.stopped {
+    background-color: #DFE3EE; /* Good contrast at 13.61:1 with #1B191B */
+    color: #1B191B;
+}
+
+#mpd.paused {
+    background-color: #AAAED6; /* Good contrast at 8.10:1 with #1B191B */
+    color: #1B191B;
+}
+
+#language {
+    background: #C5D9F5; /* Good contrast at 12.16:1 with #1B191B */
+    color: #1B191B;
+    padding: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: #FBE2D4; /* Good contrast at 14.09:1 with #1B191B */
+    color: #1B191B;
+    padding: 0 0px;
+    min-width: 16px;
+}
+
+#keyboard-state>label {
+    padding: 0 5px;
+}
+
+#keyboard-state>label.locked {
+    background: rgba(27, 25, 27, 0.2);
+}
+
+/* New style for power button to ensure good contrast */
+#custom-power {
+    background-color: #1B191B;
+    color: #FBFBFB; /* Excellent contrast at 16.89:1 */
+    padding: 0 10px;
+}

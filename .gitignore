@@ -1,0 +1,9 @@
+bin/
+.config/mpv/*
+!.config/mpv/mpv.conf
+lazy-lock.json
+*.log
+*.backup
+*.hash
+*.sqlite3
+*token

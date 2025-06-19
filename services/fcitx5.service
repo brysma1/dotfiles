@@ -1,0 +1,10 @@
+[Unit]
+Description=Fcitx5 Input Method
+
+[Service]
+ExecStart=uwsm app -- fcitx5 -d --replace
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+
