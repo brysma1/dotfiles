@@ -12,5 +12,11 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} 
   source ${ZIM_HOME}/zimfw.zsh init
 fi
 
+# Set styles pre-module load
+zstyle ':zim:git' aliases-prefix 'g'
+
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
+
+# Set styles post-module load
+zstyle ':zim:prompt-pwd:fish-style' dir-length

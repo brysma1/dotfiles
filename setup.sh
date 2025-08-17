@@ -145,10 +145,9 @@ first_setup() {
         https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
         https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-    sudo dnf install -y firefox foot hyprland hyprpaper hyprpolkitagent mako \
-        qt5-qtwayland qt6-qtwayland uwsm wofi \
-        xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
-        dnf-plugins-core sddm
+    sudo dnf install -y firefox foot hyprland hyprpaper hyprpolkitagent mako qt5-qtwayland \
+        qt6-qtwayland uwsm wofi xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
+        dnf-plugins-core sddm neovim waybar fcitx5 ffmpeg mpv btop
 
     sudo dnf remove kitty -y
 

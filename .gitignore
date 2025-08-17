@@ -7,3 +7,7 @@ lazy-lock.json
 *.hash
 *.sqlite3
 *token
+.zim/
+.zcomp*
+.zhistory
+

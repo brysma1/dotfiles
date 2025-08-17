@@ -1,27 +1,13 @@
-#
 # Modules
-#
-
-# Sets sane Zsh built-in environment options.
 zmodule environment
-# Applies correct bindkeys for input events.
 zmodule input
-# Utility aliases and functions. Adds colour to ls, grep and less.
 zmodule utility
-
-#
-# Prompt
-#
-
-
-zmodule duration-info
-
-zmodule git-info
+zmodule git
 
 # Promt stuff
+zmodule git-info
 zmodule agnoster
 zmodule prompt-pwd
-zstyle ':zim:prompt-pwd:fish-style' dir-length 0
 
 #
 # Completion
@@ -33,10 +19,7 @@ zmodule zsh-users/zsh-completions --fpath src
 # completion must be sourced after all modules that add completion definitions.
 zmodule completion
 
-#
 # Modules that must be initialized last
-#
-
 # Fish-like syntax highlighting for Zsh.
 zmodule zsh-users/zsh-syntax-highlighting
 # Fish-like autosuggestions for Zsh.
