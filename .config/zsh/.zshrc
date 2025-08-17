@@ -1,3 +1,8 @@
+# General env variables
+MANPAGER=nvim +Man!
+EDITOR=nvim
+
+# ZIM stuff starts here :>
 ZIM_CONFIG_FILE=${ZDOTDIR}/.zimrc
 ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 
